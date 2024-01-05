@@ -61,6 +61,11 @@ with st.sidebar:
     'Bootstrap',
     ('True', 'False')
 )
+    if bootstrap=="True":
+        bootstrap=True
+    if bootstrap=="False":
+        bootstrap=False
+   
 
 
 
