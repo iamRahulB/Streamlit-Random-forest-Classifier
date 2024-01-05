@@ -18,4 +18,4 @@
 
 <h2>Usage</h2>
 
-<p>To use the web app, click on the following link: <a href="http://www.example.com">Demo Link</a></p>
+<p>To use the web app, click on the following link: <a href="https://randomforestclassifier.streamlit.app/">Demo Link</a></p>
