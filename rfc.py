@@ -53,8 +53,10 @@ with st.sidebar:
     estimators=int(st.number_input("N Estimators"))
     
     max_features=st.selectbox("Max Features",('auto', 'sqrt','log2','manual'))
-    if max_features=="manual":
-        max_features=int(st.number_input("Input Max Feat."))
+    if max_features == 'manual':
+    max_features = int(st.sidebar.number_input('Max Features'))
+    elif max_features == 'auto':
+        max_features = None
     
     bootstrap = st.checkbox("Bootstrap?", value=True)
    
