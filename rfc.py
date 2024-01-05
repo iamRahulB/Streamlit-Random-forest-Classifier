@@ -56,10 +56,7 @@ with st.sidebar:
     if max_features=="manual":
         max_features=int(st.number_input("Input Max Feat."))
     
-    bootstrap = st.sidebar.selectbox(
-    'Bootstrap',
-    ('True', 'False')
-)
+    bootstrap = st.checkbox("Bootstrap?", value=True)
    
 
 
@@ -74,7 +71,6 @@ if st.sidebar.button('Run Algorithm'):
     if estimators==0:
         estimators=100
         
-    boot=bool(bootstrap)
 
     if max_sample==1:
         st.write("Please increase max samples  to get better results, Selected sample size:",max_sample)
