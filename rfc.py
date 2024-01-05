@@ -51,8 +51,7 @@ shapes=st.write("Overall DataFrame Shape",df.shape,)
 
 with st.sidebar:
     estimators=int(st.number_input("N Estimators"))
-    if estimators==0:
-        estimators=100
+    
     max_features=st.selectbox("Max Features",('auto', 'sqrt','log2','manual'))
     if max_features=="manual":
         max_features=int(st.number_input("Input Max Feat."))
@@ -61,7 +60,6 @@ with st.sidebar:
     'Bootstrap',
     ('True', 'False')
 )
-boot=bool(bootstrap)
    
 
 
@@ -74,8 +72,10 @@ if st.sidebar.button('Run Algorithm'):
     figures.empty()
     data.empty()
     
+   if estimators==0:
+        estimators=100
+   boot=bool(bootstrap)
 
-   
     if max_sample==1:
         st.write("Please increase max samples  to get better results, Selected sample size:",max_sample)
     classifier = RandomForestClassifier(n_estimators=estimators,random_state=42,bootstrap=boot,max_samples=max_sample,max_features=max_features)
