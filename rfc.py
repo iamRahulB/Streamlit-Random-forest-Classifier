@@ -61,7 +61,7 @@ with st.sidebar:
     'Bootstrap',
     ('True', 'False')
 )
-    bootstrap=bool(bootstrap)
+boot=bool(bootstrap)
    
 
 
@@ -78,7 +78,7 @@ if st.sidebar.button('Run Algorithm'):
    
     if max_sample==1:
         st.write("Please increase max samples  to get better results, Selected sample size:",max_sample)
-    classifier = RandomForestClassifier(n_estimators=estimators,random_state=42,bootstrap=bootstrap,max_samples=max_sample,max_features=max_features)
+    classifier = RandomForestClassifier(n_estimators=estimators,random_state=42,bootstrap=boot,max_samples=max_sample,max_features=max_features)
     classifier.fit(X_train, y_train)
     y_predicted = classifier.predict(X_test)
 
