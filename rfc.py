@@ -50,7 +50,7 @@ with col2:
 shapes=st.write("Overall DataFrame Shape",df.shape,)
 
 with st.sidebar:
-    estimators=int(st.number_input("N Estimators"))
+    estimators=int(st.number_input("N Estimators [default:100]"))
     
     max_features=st.selectbox("Max Features",('auto', 'sqrt','log2','manual'))
     if max_features == 'manual':
