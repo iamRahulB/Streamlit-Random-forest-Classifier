@@ -71,10 +71,10 @@ if st.sidebar.button('Run Algorithm'):
 
     figures.empty()
     data.empty()
-    
-   if estimators==0:
+    if estimators==0:
         estimators=100
-   boot=bool(bootstrap)
+        
+    boot=bool(bootstrap)
 
     if max_sample==1:
         st.write("Please increase max samples  to get better results, Selected sample size:",max_sample)
