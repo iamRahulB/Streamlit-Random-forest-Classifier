@@ -9,7 +9,16 @@ from sklearn.metrics import accuracy_score
 st.set_page_config(initial_sidebar_state="expanded")
 
 st.title("Random Forest Classifier")
+import pkg_resources
 
+def display_installed_packages():
+    # Get a list of installed packages and their versions
+    installed_packages = [f"{dist.project_name}=={dist.version}" for dist in pkg_resources.working_set]
+
+    # Display the result in a Streamlit text area
+    st.text_area("Installed Packages:", "\n".join(installed_packages), height=400)
+
+display_installed_packages()
 with st.sidebar:
     st.title("Random Forest Classifier")
     dataset=st.selectbox("Choose Dataset",("Two spirals","Concentric Circles"))
